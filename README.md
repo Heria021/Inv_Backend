@@ -178,6 +178,8 @@ Response format:
 | Variable | Default | Description |
 |---|---|---|
 | `DATABASE_URL` | required | PostgreSQL connection string |
+| `SUPABASE_URL` | optional | Supabase project API URL |
+| `SUPABASE_KEY` | optional | Supabase publishable API key |
 | `APP_ENV` | `development` | Environment name |
 | `APP_HOST` | `0.0.0.0` | Server host |
 | `APP_PORT` | `8000` | Server port |

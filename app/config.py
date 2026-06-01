@@ -4,6 +4,8 @@ from functools import lru_cache
 
 class Settings(BaseSettings):
     DATABASE_URL: str
+    SUPABASE_URL: str | None = None
+    SUPABASE_KEY: str | None = None
     APP_ENV: str = "development"
     APP_HOST: str = "0.0.0.0"
     APP_PORT: int = 8000
