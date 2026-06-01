@@ -1,8 +1,11 @@
-from pydantic_settings import BaseSettings
 from functools import lru_cache
+
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
+    model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
+
     DATABASE_URL: str
     SUPABASE_URL: str | None = None
     SUPABASE_KEY: str | None = None
@@ -12,10 +15,6 @@ class Settings(BaseSettings):
     LOW_STOCK_THRESHOLD: int = 10
     APP_NAME: str = "Inventory & Order Management API"
     APP_VERSION: str = "1.0.0"
-
-    class Config:
-        env_file = ".env"
-        env_file_encoding = "utf-8"
 
 
 @lru_cache()
